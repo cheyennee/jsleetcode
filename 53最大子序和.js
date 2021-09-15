@@ -22,6 +22,12 @@
 // lsum表示[l, r]内以l为左端点的最大子段长
 // rsum表示[l, r]内以r为右端点的最大子段长。设置这个变量是因为最长子序和从数组左边往右边算和从右边往左边算是一样的这个原因嘛？
 // msum表示[l, r]内最大子段和
+
+//若M上的最大连续子列和序列横跨L和R，则该序列一定是从L中的某一位置开始延续到mid（L的右边界），
+//然后从mid + 1（R的左边界）开始延续到R中的某一位置。
+//因此我们还需要维护区间左边界开始的最大连续子列和leftSum以及区间右边界结束的最大连续子列和rightSum信息
+//我们需要维护区间所有数值之和totalSum的信息，这样就得到了M.leftSum = max(L.leftSum, L.totalSum + R.leftSum)
+
 function Status(l, r, m, i){
     this.lSum = l
     this.rSum = r
