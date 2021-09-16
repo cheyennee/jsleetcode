@@ -1,1 +1,1 @@
-leecode written in JS.
+Leetcode written in JS.
